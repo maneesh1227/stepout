@@ -1,0 +1,39 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "username": "vamsi",
+  "password": "vamsi_567",
+  "email":"vamsi@gmail.com"
+}
+
+POST http://localhost:3000/login
+Content-Type: application/json 
+
+{
+  "username": "vamsi",
+  "password": "vamsi_567"
+}
+
+POST http://localhost:3000/trains/create
+Content-Type: application/json
+{
+  "train_name": "jet_train",
+  "source": "StationB",
+  "destination": "StationC",
+  "seat_capacity": 50,
+  "arrival_time_at_source": "011:00",
+  "arrival_time_at_destination": "2:00"
+}
+
+GET http://localhost:3000/trains/availability?source=StationB&destination=StationC
+
+
+POST http://localhost:3000/trains/jet_train/book
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZhbXNpIiwiaWQiOjYsImlhdCI6MTcyMjc2OTcxMn0.Kof9YoRFBUb3hAOvIsgItsUDrILhMCtqN-ZD6YSAcSw
+
+{
+  "id":"1234",
+  "no_of_seats":2
+}
